@@ -1,6 +1,6 @@
 {
   "name": "rmu-mfe-wiki",
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.0",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production",
     "build:dev": "webpack --mode development",
