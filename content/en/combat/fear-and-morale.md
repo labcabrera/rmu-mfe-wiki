@@ -2,7 +2,7 @@
 title: Fear, morale and rallying
 summary: When a side breaks, what each fear state does and how to rally it, with objective triggers for fights between players.
 order: 30
-source: es@0d90fec73ca916
+source: es@0fcdcaed240d73
 ---
 
 # Fear, morale and rallying
@@ -15,7 +15,7 @@ This page:
 - separates what is objective from what is the GM's judgement;
 - proposes **objective house triggers**;
 - explains what the app does today;
-- ends with ideas for automating more in combat mode.
+- ends with what is still to automate.
 
 > References such as "Core Law §14.3" point to the section of the book with the full rule. Anything marked as a **house rule** is our proposal, not rules text.
 
@@ -90,7 +90,7 @@ This page:
 | "The fight is going badly", "a superior force"           | There is no measure of how the fight is going          |
 | "Being surrounded"                                       | It says neither how many foes nor from where           |
 | "A foe you cannot harm", "an unstoppable threat"         | It depends on what the character believes              |
-| Half the allies: counting heads?                         | A level 8 captain and a level 1 recruit count the same |
+| Half the allies: counting members?                       | A level 8 captain and a level 1 recruit count the same |
 | How long fear lasts                                      | The book does not say: it only goes away by rallying   |
 | Creature behaviour (timid, jumpy, aggressive…)           | It is descriptive, with no numbers                     |
 | "Flees if badly wounded", "backs off if things go badly" | Same                                                   |
@@ -155,77 +155,82 @@ The book only removes it by rallying. As a house rule:
 
 Maela's faction: Maela (level 8, leader, 10 ranks of Leadership), sergeant Iven (level 4) and three level 2 soldiers. Strength **18**. Facing them, Gorth's band, with strength 16.
 
-| Round | What happens                   | Strength standing | Trigger                                                                                                     | Counting heads (the app today) |
-| ----- | ------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| 1     | A soldier falls                | 16/18 (89%)       | None                                                                                                        | 1/5 down: none                 |
-| 2     | Maela falls                    | 8/18 (44%)        | Strength < 50% (level 10) and the leader falls (level 5): roll against **10**, **without** the leader bonus | 2/5: none                      |
-| 3     | Iven takes command and rallies | —                 | —                                                                                                           | —                              |
+| Round | What happens                   | Strength standing | Trigger                                                                                                     | Book rules (by members) |
+| ----- | ------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------- |
+| 1     | A soldier falls                | 16/18 (89%)       | None                                                                                                        | 1/5 down: none          |
+| 2     | Maela falls                    | 8/18 (44%)        | Strength < 50% (level 10) and the leader falls (level 5): roll against **10**, **without** the leader bonus | 2/5: none               |
+| 3     | Iven takes command and rallies | —                 | —                                                                                                           | —                       |
 
 - In round 2, Iven and the two soldiers still standing roll a fear RR against level 10, without Maela's +10. One soldier ends up **Balking** and the other **Retreating**. Iven passes.
 - In round 3, Iven rallies the two soldiers.
   - Modifiers: −20 for the worst state (Retreating) and −10 for the group (2 followers).
   - He adds his Leadership bonus. On a success, fear drops two steps: both are free.
   - From now on Iven only gives his bonus if the soldiers acknowledge him as leader.
-- **Counting heads**, nothing would have fired by round 2, and Maela's fall would have weighed no more than a soldier's.
+- **Counting members**, nothing would have fired by round 2, and Maela's fall would have weighed no more than a soldier's.
 
 ![Surrounded: a soldier attacked from the front, the flank and the rear in the same round.](images/combat/fear-surrounded.svg)
 
 ## 4. What the app does today {#app}
 
-- **Fear states:** Balking, Retreating, Routed and Broken. The worst one is kept, and they **do not expire**: they go away by rallying or by hand.
+- **Sides:** in the tactical game, while it is being set up, the GM groups factions into **sides** that fight together and can mark a **leader** for each side.
+  - Without sides defined, each faction is its own side.
+  - Once the game has started, sides do not change. A faction that joins later (for example the environment one when NPCs are added) forms its own side.
+  - Allies are not offered as attack targets, and the group of fear, morale and rally checks is the whole side by default.
+- **Strength bar** in the round header, one per side:
+  - levels standing, down and fled, with marks at 50%, 25% and 10%;
+  - below it, the hits of the whole side added up.
+- **Psychology rules**, a game option:
+  - **House** (default for new games): the triggers on this page, by sum of levels;
+  - **Book:** the share of the members of the side that are down, with the table thresholds (half, more than half, three quarters and 90%). Games created earlier use it.
+- **Fear states:** Balking, Retreating, Routed and Broken. The worst one is kept, and they **do not expire** by themselves.
   - **Routed or Broken:** they can only move (at Run or faster), dodge or take free actions. They neither attack nor heal.
   - **Broken:** there is a **Drop items** button.
   - **Retreating:** cannot charge, and moving faster than Jog only gives a warning.
   - **Balking:** warnings only.
   - Without a map, the app does not check **which way** they move.
+- **Automatic warnings**, at the end of each round. None of them **rolls anything**: clicking one opens the dialog already filled in.
+  - **Side fear check**, with the list of triggers and the highest level. With the house rules: strength ≤ 50%, < 50%, < 25% and < 10%, the enemy doubles or triples the standing strength, and the side's leader falls.
+  - **Surrounded** (house): anyone attacked in the round by 3 or more foes, or from the flank and the rear.
+  - **Alone** (house): the last one standing on a side of two or more.
+  - Each trigger warns **once per side** (or actor) and game, and only warns again at a higher level.
+  - **The side won the round** (house): if a side deals more casualties in levels than it takes, it offers to remove Balking and Retreating from its members still standing. The GM confirms or dismisses it.
+  - **Revulsion**, for anyone with that flaw, with the level based on the blood they see.
+- **Down**, in all of the above: dead, dying, unconscious, incapacitated, paralyzed, routed and broken.
 - **Psychology dialog**, in the round header, with the **Fear**, **Morale** and **Rally** tabs:
   - the GM picks factions or actors, the leader and whether they are acknowledged;
   - the fright level can be a number, an NPC's level or someone's Intimidation ranks;
   - rolls left empty are rolled by the server;
-  - the leader bonus and Look of Eagles are included; the dead and unconscious do not roll.
-- **Automatic fear check warning:**
-  - at the end of each round it works out the share of each faction that is down, **counting heads**;
-  - thresholds: half (level 5), more than half (10), more than three quarters (15), more than 90% (20);
-  - down means dead, unconscious, routed or broken; the dying, incapacitated and paralyzed do **not** count;
-  - each threshold warns **once per game and faction**;
-  - the warning **rolls nothing**: clicking it opens the dialog already filled in.
-- **Revulsion warning** for anyone with that flaw, with the level based on the blood they see.
+  - the leader bonus and Look of Eagles are included. A fallen leader gives no bonus, and those who are down do not roll.
 - **Morale:** stores the modifier of the result on the leader; nothing changes for the followers, and the GM decides what they do.
 - **Rally:** lowers the fear of each frightened follower according to the result, with the modifier for the worst state and for the group size.
 - **Individual fear RR:** a button on the actor's sheet, to apply the result to one actor.
 
 ## 5. Comparison {#comparison}
 
-| Situation                 | Rules                                    | House rule                                                         | The app today                              |
-| ------------------------- | ---------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------ |
-| When to check             | GM's judgement                           | At the end of each round, by triggers                              | Warning on casualties; the rest, the GM    |
-| Casualties of a side      | Half, three quarters, 90%                | By **sum of levels**                                               | By heads, once per game                    |
-| Who counts as down        | Not specified                            | Dead, dying, unconscious, incapacitated, paralyzed, routed, broken | Dead, unconscious, routed, broken          |
-| Enemy superiority         | "You are outnumbered"                    | Double (5) or triple (10) strength                                 | No                                         |
-| The leader falls          | The bonus is lost if they cannot be seen | Level 5 and no bonus                                               | Manual (the GM unticks the leader)         |
-| Surrounded                | "Being surrounded"                       | 3 attackers, or flank and rear                                     | No                                         |
-| Foe that cannot be harmed | GM's judgement                           | 2 rounds without harming it                                        | No                                         |
-| Frightening creature      | Its level                                | Same, the first time                                               | The NPC's level in the dialog              |
-| Effects of each state     | Results table                            | Same                                                               | Action limits and warnings                 |
-| How long fear lasts       | Not stated                               | Until winning a round or rallying                                  | Until rallied or removed by hand           |
-| Rallying                  | Worst state, −10 per 10                  | Same                                                               | Works it out                               |
-| Morale (orders)           | Group average                            | Same                                                               | Works it out; applies nothing to followers |
+| Situation                 | Rules                                    | House rule                                                         | The app                                               |
+| ------------------------- | ---------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
+| When to check             | GM's judgement                           | At the end of each round, by triggers                              | Warnings at the end of each round; the rest, the GM   |
+| Casualties of a side      | Half, three quarters, 90%                | By **sum of levels**                                               | By levels (house) or members (book), per side         |
+| Who counts as down        | Not specified                            | Dead, dying, unconscious, incapacitated, paralyzed, routed, broken | Same as the house rule                                |
+| Enemy superiority         | "You are outnumbered"                    | Double (5) or triple (10) strength                                 | Warning (house)                                       |
+| The leader falls          | The bonus is lost if they cannot be seen | Level 5 and no bonus                                               | Warning (house) and no bonus                          |
+| Surrounded                | "Being surrounded"                       | 3 attackers, or flank and rear                                     | Individual warning (house)                            |
+| Alone                     | —                                        | Level 10                                                           | Individual warning (house)                            |
+| Foe that cannot be harmed | GM's judgement                           | 2 rounds without harming it                                        | No: the GM decides                                    |
+| Frightening creature      | Its level                                | Same, the first time                                               | The NPC's level in the dialog                         |
+| Effects of each state     | Results table                            | Same                                                               | Action limits and warnings                            |
+| How long fear lasts       | Not stated                               | Until winning a round or rallying                                  | Offers to remove it on winning a round (house); rally |
+| Rallying                  | Worst state, −10 per 10                  | Same                                                               | Works it out                                          |
+| Morale (orders)           | Group average                            | Same                                                               | Works it out; applies nothing to followers            |
 
-## 6. Ideas for combat mode {#ideas}
+## 6. Pending ideas {#ideas}
 
-Proposals for automating the house rules, with no date:
+What the app does not do yet, with no date:
 
-- **Strength by levels:** work out casualties by adding up levels, and also count the dying, incapacitated and paralyzed.
-- **Superiority:** compare each faction's standing strength with its enemies' and warn when it is doubled or tripled.
-- **Faction leader:** mark the leader of each faction in the game. When they fall, warn of the level 5 check and remove their bonus automatically.
-- **Surrounded:** count the different attackers of each actor in the round, and whether any attacked from the flank or rear (already stored in the attack modifiers).
 - **Foe that cannot be harmed:** detect two rounds in a row in which a side's attacks deal no damage.
 - **First sight of a creature** with a fright level: warn in its first round.
-- **Game options:**
-  - turn on the house triggers;
-  - roll automatically for NPCs (players still decide for their characters).
-- **More useful warnings:** warn again if the situation gets worse instead of only once per game, and one warning per side with every trigger.
-- **End of fear:** on winning a round, offer to remove Balking and Retreating.
+- **The comrade beside them** and **badly wounded**, the other individual triggers.
+- **Roll automatically for NPCs** (players still decide for their characters).
 - **More NPC data:**
   - use their outlook: timid or jumpy ones check sooner, and berserk or mindless ones do not check;
   - apply the morale result to the followers.
