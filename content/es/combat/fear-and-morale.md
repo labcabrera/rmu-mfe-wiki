@@ -14,7 +14,7 @@ Esta página:
 - separa lo que es objetivo de lo que es criterio del máster;
 - propone **disparadores objetivos de la casa**;
 - explica qué hace hoy la app;
-- termina con ideas para automatizar más en el modo de combate.
+- termina con lo que queda por automatizar.
 
 > Las referencias del tipo «Core Law §14.3» apuntan a la sección del libro donde está la regla completa. Lo marcado como **regla de la casa** es una propuesta nuestra, no texto del reglamento.
 
@@ -154,11 +154,11 @@ El libro solo lo quita reagrupando. Como regla de la casa:
 
 La facción de Maela: Maela (nivel 8, líder, Leadership 10 rangos), el sargento Iven (nivel 4) y tres soldados de nivel 2. Fuerza **18**. Enfrente, la banda de Gorth, con fuerza 16.
 
-| Asalto | Qué pasa                      | Fuerza en pie | Disparador                                                                                      | Contando cabezas (la app hoy) |
-| ------ | ----------------------------- | ------------- | ----------------------------------------------------------------------------------------------- | ----------------------------- |
-| 1      | Cae un soldado                | 16/18 (89 %)  | Ninguno                                                                                         | 1/5 caídos: ninguno           |
-| 2      | Cae Maela                     | 8/18 (44 %)   | Fuerza < 50 % (nivel 10) y cae el líder (nivel 5): se tira contra **10**, **sin** bono de líder | 2/5: ninguno                  |
-| 3      | Iven toma el mando y reagrupa | —             | —                                                                                               | —                             |
+| Asalto | Qué pasa                      | Fuerza en pie | Disparador                                                                                      | Reglas del libro (por cabezas) |
+| ------ | ----------------------------- | ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ |
+| 1      | Cae un soldado                | 16/18 (89 %)  | Ninguno                                                                                         | 1/5 caídos: ninguno            |
+| 2      | Cae Maela                     | 8/18 (44 %)   | Fuerza < 50 % (nivel 10) y cae el líder (nivel 5): se tira contra **10**, **sin** bono de líder | 2/5: ninguno                   |
+| 3      | Iven toma el mando y reagrupa | —             | —                                                                                               | —                              |
 
 - En el asalto 2, Iven y los dos soldados en pie tiran TR de miedo contra nivel 10, sin los +10 de Maela. Un soldado queda **Titubea** y el otro **En retirada**. Iven la supera.
 - En el asalto 3, Iven reagrupa a los dos soldados.
@@ -171,60 +171,65 @@ La facción de Maela: Maela (nivel 8, líder, Leadership 10 rangos), el sargento
 
 ## 4. Qué hace hoy la app {#app}
 
-- **Estados de miedo:** Titubea, En retirada, En desbandada y Quebrado. Se guarda el peor y **no caducan**: se quitan reagrupando o a mano.
+- **Bandos:** en la partida táctica, mientras está en preparación, el máster agrupa las facciones en **bandos** que luchan juntos y puede marcar un **líder** por bando.
+  - Sin bandos definidos, cada facción es su propio bando.
+  - Una vez empezada la partida, los bandos no cambian. Una facción que entra después (por ejemplo, la del entorno al añadir PNJ) forma su propio bando.
+  - Los aliados no aparecen como objetivo de ataques, y el grupo de los chequeos de miedo, moral y reagrupar es por defecto todo el bando.
+- **Barra de fuerza** en el encabezado del asalto, una por bando:
+  - los niveles en pie, caídos y huidos, con marcas en el 50 %, 25 % y 10 %;
+  - debajo, la suma de los puntos de vida de todo el bando.
+- **Reglas de psicología**, una opción de la partida:
+  - **Casa** (por defecto en las partidas nuevas): los disparadores de esta página, por suma de niveles;
+  - **Libro:** proporción de caídos contando cabezas, con los umbrales de la tabla (la mitad, más de la mitad, tres cuartos y 90 %). Es lo que usan las partidas creadas antes.
+- **Estados de miedo:** Titubea, En retirada, En desbandada y Quebrado. Se guarda el peor y **no caducan** solos.
   - **En desbandada o Quebrado:** solo puede moverse (a Carrera o más rápido), esquivar o hacer acciones libres. No ataca ni cura.
   - **Quebrado:** tiene un botón para **Soltar objetos**.
   - **En retirada:** no puede cargar, y moverse más rápido que al Trote solo da un aviso.
   - **Titubea:** solo avisos.
   - Sin mapa, la app no comprueba **hacia dónde** se mueve.
+- **Avisos automáticos**, al final de cada asalto. Ninguno **tira nada**: al pulsarlos se abre el diálogo ya relleno.
+  - **Chequeo de miedo del bando**, con la lista de disparadores y el nivel más alto. Con las reglas de la casa: fuerza ≤ 50 %, < 50 %, < 25 % y < 10 %, el enemigo dobla o triplica la fuerza en pie, y cae el líder del bando.
+  - **Rodeado** (casa): quien recibió en el asalto ataques de 3 o más enemigos, o por el flanco y por la espalda.
+  - **Solo** (casa): el último en pie de un bando de dos o más.
+  - Cada disparador avisa **una vez por bando** (o por actor) y partida, y solo vuelve a avisar a un nivel mayor.
+  - **El bando ha ganado el asalto** (casa): si un bando causa más bajas en niveles de las que sufre, propone quitar Titubea y En retirada a sus miembros en pie. El máster lo confirma o lo descarta.
+  - **Revulsion**, para quien tiene ese defecto, con el nivel según la sangre que ve.
+- **Caídos**, en todo lo anterior: muertos, moribundos, inconscientes, incapacitados, paralizados, en desbandada y quebrados.
 - **Diálogo de psicología**, en el encabezado del asalto, con las pestañas **Miedo**, **Moral** y **Reagrupar**:
   - el máster elige facciones o actores, el líder y si le reconocen;
   - el nivel de susto puede ser un número, el de un PNJ o los rangos de Intimidation de alguien;
   - las tiradas que se dejan vacías las tira el servidor;
-  - se incluyen el bono de líder y Look of Eagles; los muertos e inconscientes no tiran.
-- **Aviso automático de chequeo de miedo:**
-  - al final de cada asalto calcula la proporción de caídos de cada facción, **contando cabezas**;
-  - umbrales: la mitad (nivel 5), más de la mitad (10), más de tres cuartos (15), más del 90 % (20);
-  - caídos son los muertos, inconscientes, en desbandada y quebrados; **no** cuentan los moribundos, incapacitados ni paralizados;
-  - cada umbral avisa **una vez por partida y facción**;
-  - el aviso **no tira nada**: al pulsarlo se abre el diálogo ya relleno.
-- **Aviso de Revulsion** para quien tiene ese defecto, con el nivel según la sangre que ve.
+  - se incluyen el bono de líder y Look of Eagles. Un líder caído no da bono, y los caídos no tiran.
 - **Moral:** guarda el modificador del resultado en el líder; a los seguidores no les cambia nada, y el máster decide qué hacen.
 - **Reagrupar:** baja el miedo de cada seguidor asustado según el resultado, con el modificador del peor estado y el del tamaño del grupo.
 - **TR de miedo individual:** botón en la ficha del actor, para aplicar el resultado a uno solo.
 
 ## 5. Comparativa {#comparison}
 
-| Situación                     | Reglamento                       | Regla de la casa                                                                         | La app hoy                                       |
-| ----------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| Cuándo chequear               | A criterio del máster            | Al final de cada asalto, por disparadores                                                | Aviso por bajas; el resto, el máster             |
-| Bajas del bando               | Mitad, tres cuartos, 90 %        | Por **suma de niveles**                                                                  | Por cabezas, una vez por partida                 |
-| Quién cuenta como caído       | No lo precisa                    | Muertos, moribundos, inconscientes, incapacitados, paralizados, en desbandada, quebrados | Muertos, inconscientes, en desbandada, quebrados |
-| Superioridad enemiga          | «Os superan en número»           | Doble (5) o triple (10) de fuerza                                                        | No                                               |
-| Cae el líder                  | Se pierde el bono si no se le ve | Nivel 5 y sin bono                                                                       | Manual (el máster desmarca al líder)             |
-| Rodeado                       | «Os están rodeando»              | 3 atacantes, o flanco y espalda                                                          | No                                               |
-| Enemigo que no se puede dañar | A criterio                       | 2 asaltos sin hacerle daño                                                               | No                                               |
-| Criatura que asusta           | Su nivel                         | Igual, la primera vez                                                                    | Nivel del PNJ en el diálogo                      |
-| Efectos de cada estado        | Tabla de resultados              | Igual                                                                                    | Límites de acciones y avisos                     |
-| Cuánto dura el miedo          | No lo dice                       | Hasta ganar un asalto o reagrupar                                                        | Hasta reagrupar o quitarlo a mano                |
-| Reagrupar                     | Peor estado, −10 por 10          | Igual                                                                                    | Lo calcula                                       |
-| Moral (órdenes)               | Media del grupo                  | Igual                                                                                    | Lo calcula; no aplica nada a los seguidores      |
+| Situación                     | Reglamento                       | Regla de la casa                                                                         | La app                                                |
+| ----------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Cuándo chequear               | A criterio del máster            | Al final de cada asalto, por disparadores                                                | Avisos al final de cada asalto; el resto, el máster   |
+| Bajas del bando               | Mitad, tres cuartos, 90 %        | Por **suma de niveles**                                                                  | Por niveles (casa) o por cabezas (libro), por bando   |
+| Quién cuenta como caído       | No lo precisa                    | Muertos, moribundos, inconscientes, incapacitados, paralizados, en desbandada, quebrados | Igual que la casa                                     |
+| Superioridad enemiga          | «Os superan en número»           | Doble (5) o triple (10) de fuerza                                                        | Aviso (casa)                                          |
+| Cae el líder                  | Se pierde el bono si no se le ve | Nivel 5 y sin bono                                                                       | Aviso (casa) y sin bono                               |
+| Rodeado                       | «Os están rodeando»              | 3 atacantes, o flanco y espalda                                                          | Aviso individual (casa)                               |
+| Solo                          | —                                | Nivel 10                                                                                 | Aviso individual (casa)                               |
+| Enemigo que no se puede dañar | A criterio                       | 2 asaltos sin hacerle daño                                                               | No: lo decide el máster                               |
+| Criatura que asusta           | Su nivel                         | Igual, la primera vez                                                                    | Nivel del PNJ en el diálogo                           |
+| Efectos de cada estado        | Tabla de resultados              | Igual                                                                                    | Límites de acciones y avisos                          |
+| Cuánto dura el miedo          | No lo dice                       | Hasta ganar un asalto o reagrupar                                                        | Propone quitarlo al ganar un asalto (casa); reagrupar |
+| Reagrupar                     | Peor estado, −10 por 10          | Igual                                                                                    | Lo calcula                                            |
+| Moral (órdenes)               | Media del grupo                  | Igual                                                                                    | Lo calcula; no aplica nada a los seguidores           |
 
-## 6. Ideas para el modo de combate {#ideas}
+## 6. Ideas pendientes {#ideas}
 
-Propuestas para automatizar las reglas de la casa, sin fecha:
+Lo que aún no hace la app, sin fecha:
 
-- **Fuerza por niveles:** calcular las bajas sumando niveles, y contar también a moribundos, incapacitados y paralizados.
-- **Superioridad:** comparar la fuerza en pie de cada facción con la de sus enemigas y avisar al doblarla o triplicarla.
-- **Líder de facción:** marcar el líder de cada facción en la partida. Cuando cae, avisar del chequeo de nivel 5 y quitar su bono automáticamente.
-- **Rodeado:** contar los atacantes distintos de cada actor en el asalto y si alguno atacó desde el flanco o la espalda (ya se guarda en los modificadores del ataque).
 - **Enemigo que no se puede dañar:** detectar dos asaltos seguidos en que los ataques de un bando no hacen daño.
 - **Primera vista de una criatura** con nivel de susto: avisar en su primer asalto.
-- **Opciones de la partida:**
-  - activar los disparadores de la casa;
-  - tirar automáticamente por los PNJ (los jugadores siguen decidiendo por sus personajes).
-- **Avisos más útiles:** volver a avisar si la situación empeora en lugar de una sola vez por partida, y un solo aviso por bando con todos los disparadores.
-- **Fin del miedo:** al ganar un asalto, proponer quitar Titubea y En retirada.
+- **Compañero de al lado** y **herido grave**, los otros disparadores individuales.
+- **Tirar automáticamente por los PNJ** (los jugadores siguen decidiendo por sus personajes).
 - **Más datos de los PNJ:**
   - usar su forma de ser: las tímidas o asustadizas chequean antes, y las enloquecidas o sin mente no chequean;
   - aplicar el resultado de moral a los seguidores.
