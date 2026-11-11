@@ -4,7 +4,7 @@ import { contentHash, PageMeta, parseFrontMatter } from './front-matter';
 export const REFERENCE_LANGUAGE = 'es';
 
 /** Sections in the order the wiki lists them; any other one goes after them, alphabetically. */
-export const SECTION_ORDER = ['combat'];
+export const SECTION_ORDER = ['getting-started', 'combat'];
 
 export type PageVersion = { language: string; meta: PageMeta; markdown: string; hash: string };
 export type WikiPageEntry = { section: string; slug: string; versions: Record<string, PageVersion> };
