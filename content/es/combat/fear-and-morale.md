@@ -89,7 +89,7 @@ Esta página:
 | «La lucha va mal», «una fuerza superior»                           | No hay una medida de cómo va la lucha                       |
 | «Os están rodeando»                                                | No dice cuántos enemigos ni desde dónde                     |
 | «Un enemigo al que no puedes dañar», «una amenaza imparable»       | Depende de lo que crea el personaje                         |
-| La mitad de los aliados, ¿contando cabezas?                        | Un capitán de nivel 8 y un recluta de nivel 1 cuentan igual |
+| La mitad de los aliados, ¿contando integrantes?                    | Un capitán de nivel 8 y un recluta de nivel 1 cuentan igual |
 | Cuánto dura el miedo                                               | El libro no lo dice: solo se quita reagrupando              |
 | El comportamiento de las criaturas (tímida, asustadiza, agresiva…) | Es descriptivo, sin cifras                                  |
 | «Huye si está malherida», «se retira si le va mal»                 | Igual                                                       |
@@ -154,18 +154,18 @@ El libro solo lo quita reagrupando. Como regla de la casa:
 
 La facción de Maela: Maela (nivel 8, líder, Leadership 10 rangos), el sargento Iven (nivel 4) y tres soldados de nivel 2. Fuerza **18**. Enfrente, la banda de Gorth, con fuerza 16.
 
-| Asalto | Qué pasa                      | Fuerza en pie | Disparador                                                                                      | Reglas del libro (por cabezas) |
-| ------ | ----------------------------- | ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ |
-| 1      | Cae un soldado                | 16/18 (89 %)  | Ninguno                                                                                         | 1/5 caídos: ninguno            |
-| 2      | Cae Maela                     | 8/18 (44 %)   | Fuerza < 50 % (nivel 10) y cae el líder (nivel 5): se tira contra **10**, **sin** bono de líder | 2/5: ninguno                   |
-| 3      | Iven toma el mando y reagrupa | —             | —                                                                                               | —                              |
+| Asalto | Qué pasa                      | Fuerza en pie | Disparador                                                                                      | Reglas del libro (por integrantes) |
+| ------ | ----------------------------- | ------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------- |
+| 1      | Cae un soldado                | 16/18 (89 %)  | Ninguno                                                                                         | 1/5 caídos: ninguno                |
+| 2      | Cae Maela                     | 8/18 (44 %)   | Fuerza < 50 % (nivel 10) y cae el líder (nivel 5): se tira contra **10**, **sin** bono de líder | 2/5: ninguno                       |
+| 3      | Iven toma el mando y reagrupa | —             | —                                                                                               | —                                  |
 
 - En el asalto 2, Iven y los dos soldados en pie tiran TR de miedo contra nivel 10, sin los +10 de Maela. Un soldado queda **Titubea** y el otro **En retirada**. Iven la supera.
 - En el asalto 3, Iven reagrupa a los dos soldados.
   - Modificadores: −20 por el peor estado (En retirada) y −10 por el grupo (2 seguidores).
   - Suma su bonificación de Leadership. Con un éxito, el miedo baja dos grados: los dos quedan libres.
   - Iven solo da su bono a partir de ahora si los soldados le reconocen como líder.
-- **Contando cabezas** no habría saltado nada hasta el asalto 2, y la caída de Maela no habría pesado más que la de un soldado.
+- **Contando integrantes** no habría saltado nada hasta el asalto 2, y la caída de Maela no habría pesado más que la de un soldado.
 
 ![Rodeado: un soldado atacado por el frente, el flanco y la espalda en el mismo asalto.](images/combat/fear-surrounded.svg)
 
@@ -180,7 +180,7 @@ La facción de Maela: Maela (nivel 8, líder, Leadership 10 rangos), el sargento
   - debajo, la suma de los puntos de vida de todo el bando.
 - **Reglas de psicología**, una opción de la partida:
   - **Casa** (por defecto en las partidas nuevas): los disparadores de esta página, por suma de niveles;
-  - **Libro:** proporción de caídos contando cabezas, con los umbrales de la tabla (la mitad, más de la mitad, tres cuartos y 90 %). Es lo que usan las partidas creadas antes.
+  - **Libro:** proporción de integrantes caídos, con los umbrales de la tabla (la mitad, más de la mitad, tres cuartos y 90 %). Es lo que usan las partidas creadas antes.
 - **Estados de miedo:** Titubea, En retirada, En desbandada y Quebrado. Se guarda el peor y **no caducan** solos.
   - **En desbandada o Quebrado:** solo puede moverse (a Carrera o más rápido), esquivar o hacer acciones libres. No ataca ni cura.
   - **Quebrado:** tiene un botón para **Soltar objetos**.
@@ -206,21 +206,21 @@ La facción de Maela: Maela (nivel 8, líder, Leadership 10 rangos), el sargento
 
 ## 5. Comparativa {#comparison}
 
-| Situación                     | Reglamento                       | Regla de la casa                                                                         | La app                                                |
-| ----------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| Cuándo chequear               | A criterio del máster            | Al final de cada asalto, por disparadores                                                | Avisos al final de cada asalto; el resto, el máster   |
-| Bajas del bando               | Mitad, tres cuartos, 90 %        | Por **suma de niveles**                                                                  | Por niveles (casa) o por cabezas (libro), por bando   |
-| Quién cuenta como caído       | No lo precisa                    | Muertos, moribundos, inconscientes, incapacitados, paralizados, en desbandada, quebrados | Igual que la casa                                     |
-| Superioridad enemiga          | «Os superan en número»           | Doble (5) o triple (10) de fuerza                                                        | Aviso (casa)                                          |
-| Cae el líder                  | Se pierde el bono si no se le ve | Nivel 5 y sin bono                                                                       | Aviso (casa) y sin bono                               |
-| Rodeado                       | «Os están rodeando»              | 3 atacantes, o flanco y espalda                                                          | Aviso individual (casa)                               |
-| Solo                          | —                                | Nivel 10                                                                                 | Aviso individual (casa)                               |
-| Enemigo que no se puede dañar | A criterio                       | 2 asaltos sin hacerle daño                                                               | No: lo decide el máster                               |
-| Criatura que asusta           | Su nivel                         | Igual, la primera vez                                                                    | Nivel del PNJ en el diálogo                           |
-| Efectos de cada estado        | Tabla de resultados              | Igual                                                                                    | Límites de acciones y avisos                          |
-| Cuánto dura el miedo          | No lo dice                       | Hasta ganar un asalto o reagrupar                                                        | Propone quitarlo al ganar un asalto (casa); reagrupar |
-| Reagrupar                     | Peor estado, −10 por 10          | Igual                                                                                    | Lo calcula                                            |
-| Moral (órdenes)               | Media del grupo                  | Igual                                                                                    | Lo calcula; no aplica nada a los seguidores           |
+| Situación                     | Reglamento                       | Regla de la casa                                                                         | La app                                                  |
+| ----------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Cuándo chequear               | A criterio del máster            | Al final de cada asalto, por disparadores                                                | Avisos al final de cada asalto; el resto, el máster     |
+| Bajas del bando               | Mitad, tres cuartos, 90 %        | Por **suma de niveles**                                                                  | Por niveles (casa) o por integrantes (libro), por bando |
+| Quién cuenta como caído       | No lo precisa                    | Muertos, moribundos, inconscientes, incapacitados, paralizados, en desbandada, quebrados | Igual que la casa                                       |
+| Superioridad enemiga          | «Os superan en número»           | Doble (5) o triple (10) de fuerza                                                        | Aviso (casa)                                            |
+| Cae el líder                  | Se pierde el bono si no se le ve | Nivel 5 y sin bono                                                                       | Aviso (casa) y sin bono                                 |
+| Rodeado                       | «Os están rodeando»              | 3 atacantes, o flanco y espalda                                                          | Aviso individual (casa)                                 |
+| Solo                          | —                                | Nivel 10                                                                                 | Aviso individual (casa)                                 |
+| Enemigo que no se puede dañar | A criterio                       | 2 asaltos sin hacerle daño                                                               | No: lo decide el máster                                 |
+| Criatura que asusta           | Su nivel                         | Igual, la primera vez                                                                    | Nivel del PNJ en el diálogo                             |
+| Efectos de cada estado        | Tabla de resultados              | Igual                                                                                    | Límites de acciones y avisos                            |
+| Cuánto dura el miedo          | No lo dice                       | Hasta ganar un asalto o reagrupar                                                        | Propone quitarlo al ganar un asalto (casa); reagrupar   |
+| Reagrupar                     | Peor estado, −10 por 10          | Igual                                                                                    | Lo calcula                                              |
+| Moral (órdenes)               | Media del grupo                  | Igual                                                                                    | Lo calcula; no aplica nada a los seguidores             |
 
 ## 6. Ideas pendientes {#ideas}
 

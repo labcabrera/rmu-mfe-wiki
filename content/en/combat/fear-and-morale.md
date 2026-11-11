@@ -2,7 +2,7 @@
 title: Fear, morale and rallying
 summary: When a side breaks, what each fear state does and how to rally it, with objective triggers for fights between players.
 order: 30
-source: es@0dc34efd5ee831
+source: es@0fcdcaed240d73
 ---
 
 # Fear, morale and rallying
@@ -90,7 +90,7 @@ This page:
 | "The fight is going badly", "a superior force"           | There is no measure of how the fight is going          |
 | "Being surrounded"                                       | It says neither how many foes nor from where           |
 | "A foe you cannot harm", "an unstoppable threat"         | It depends on what the character believes              |
-| Half the allies: counting heads?                         | A level 8 captain and a level 1 recruit count the same |
+| Half the allies: counting members?                       | A level 8 captain and a level 1 recruit count the same |
 | How long fear lasts                                      | The book does not say: it only goes away by rallying   |
 | Creature behaviour (timid, jumpy, aggressive…)           | It is descriptive, with no numbers                     |
 | "Flees if badly wounded", "backs off if things go badly" | Same                                                   |
@@ -155,18 +155,18 @@ The book only removes it by rallying. As a house rule:
 
 Maela's faction: Maela (level 8, leader, 10 ranks of Leadership), sergeant Iven (level 4) and three level 2 soldiers. Strength **18**. Facing them, Gorth's band, with strength 16.
 
-| Round | What happens                   | Strength standing | Trigger                                                                                                     | Book rules (by heads) |
-| ----- | ------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------- | --------------------- |
-| 1     | A soldier falls                | 16/18 (89%)       | None                                                                                                        | 1/5 down: none        |
-| 2     | Maela falls                    | 8/18 (44%)        | Strength < 50% (level 10) and the leader falls (level 5): roll against **10**, **without** the leader bonus | 2/5: none             |
-| 3     | Iven takes command and rallies | —                 | —                                                                                                           | —                     |
+| Round | What happens                   | Strength standing | Trigger                                                                                                     | Book rules (by members) |
+| ----- | ------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------- |
+| 1     | A soldier falls                | 16/18 (89%)       | None                                                                                                        | 1/5 down: none          |
+| 2     | Maela falls                    | 8/18 (44%)        | Strength < 50% (level 10) and the leader falls (level 5): roll against **10**, **without** the leader bonus | 2/5: none               |
+| 3     | Iven takes command and rallies | —                 | —                                                                                                           | —                       |
 
 - In round 2, Iven and the two soldiers still standing roll a fear RR against level 10, without Maela's +10. One soldier ends up **Balking** and the other **Retreating**. Iven passes.
 - In round 3, Iven rallies the two soldiers.
   - Modifiers: −20 for the worst state (Retreating) and −10 for the group (2 followers).
   - He adds his Leadership bonus. On a success, fear drops two steps: both are free.
   - From now on Iven only gives his bonus if the soldiers acknowledge him as leader.
-- **Counting heads**, nothing would have fired by round 2, and Maela's fall would have weighed no more than a soldier's.
+- **Counting members**, nothing would have fired by round 2, and Maela's fall would have weighed no more than a soldier's.
 
 ![Surrounded: a soldier attacked from the front, the flank and the rear in the same round.](images/combat/fear-surrounded.svg)
 
@@ -181,7 +181,7 @@ Maela's faction: Maela (level 8, leader, 10 ranks of Leadership), sergeant Iven 
   - below it, the hits of the whole side added up.
 - **Psychology rules**, a game option:
   - **House** (default for new games): the triggers on this page, by sum of levels;
-  - **Book:** the share of the side that is down, counting heads, with the table thresholds (half, more than half, three quarters and 90%). Games created earlier use it.
+  - **Book:** the share of the members of the side that are down, with the table thresholds (half, more than half, three quarters and 90%). Games created earlier use it.
 - **Fear states:** Balking, Retreating, Routed and Broken. The worst one is kept, and they **do not expire** by themselves.
   - **Routed or Broken:** they can only move (at Run or faster), dodge or take free actions. They neither attack nor heal.
   - **Broken:** there is a **Drop items** button.
@@ -210,7 +210,7 @@ Maela's faction: Maela (level 8, leader, 10 ranks of Leadership), sergeant Iven 
 | Situation                 | Rules                                    | House rule                                                         | The app                                               |
 | ------------------------- | ---------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
 | When to check             | GM's judgement                           | At the end of each round, by triggers                              | Warnings at the end of each round; the rest, the GM   |
-| Casualties of a side      | Half, three quarters, 90%                | By **sum of levels**                                               | By levels (house) or heads (book), per side           |
+| Casualties of a side      | Half, three quarters, 90%                | By **sum of levels**                                               | By levels (house) or members (book), per side         |
 | Who counts as down        | Not specified                            | Dead, dying, unconscious, incapacitated, paralyzed, routed, broken | Same as the house rule                                |
 | Enemy superiority         | "You are outnumbered"                    | Double (5) or triple (10) strength                                 | Warning (house)                                       |
 | The leader falls          | The bonus is lost if they cannot be seen | Level 5 and no bonus                                               | Warning (house) and no bonus                          |
