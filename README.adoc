@@ -1,0 +1,66 @@
+= RMU Engine MFE Wiki
+:linkattrs:
+:icons: font
+
+image:https://img.shields.io/badge/license-GPL3.0-green.svg[License,link="https://www.gnu.org/licenses/gpl-3.0.html"]
+image:https://img.shields.io/badge/rolemaster-rmu-green.svg[Rolemaster,link="http://ironcrown.co.uk/unified-rolemaster/"]
+
+WARNING: *This application is an independent fan project for Rolemaster Unified. It is not affiliated with, endorsed by, or licensed by Iron Crown Enterprises (ICE), the owners of the Rolemaster intellectual property.*
+*All Rolemaster trademarks, game systems, and materials are the property of Iron Crown Enterprises. This software is provided for personal, non-commercial use only. If you enjoy Rolemaster, please support the official publications and content from ICE.*
+
+The wiki of RMU Engine: guides that explain how to play the mechanics smoothly at the table, with worked examples. It is a Module Federation remote mounted by link:https://github.com/labcabrera/rmu-mfe-shell[the shell] under `/wiki`, open without signing in. It is part of link:https://github.com/labcabrera/rmu-platform[RMU Engine].
+
+== Content
+
+Pages are Markdown files, rendered with the application's theme:
+
+[options="header",cols="1,3"]
+|===
+|Path |What it holds
+
+|`content/<language>/<section>/<page>.md`
+|One page. Spanish (`es`) is the reference language; a page missing in the active language falls back to it. Adding the file adds the page: the index is built from the headers.
+
+|`content/images/<section>/`
+|Images of the pages, referenced from the Markdown as `images/<section>/<file>`. An image with text can have a version per language in `content/images/<language>/<section>/`, used first.
+|===
+
+Every page starts with a header:
+
+[source,markdown]
+----
+---
+title: Closing, charging and melee
+summary: One line for the card in the index.
+order: 10
+source: es@05cf15da554c2b
+---
+----
+
+* `order` sorts the pages of a section (lower first).
+* `source` is only for translations: the hash of the Spanish page it was translated from. When the Spanish page changes, the translation shows a notice with a link to the original, and `make check-translations` (also in CI) fails. It prints the current hash of every Spanish page, to copy into the translation once it is brought up to date.
+* Headings with links to them carry an id that is the same in every language: `## Parar al que viene {#parry-incoming}`. Without it, the id is the slug of the text.
+
+Rules for writing:
+
+* Explain the rules in your own words, with invented characters. Cite the book section ("Core Law §8.2"), never its text or tables: this repository is public.
+* Links between pages are relative paths to the `.md` file (`../combat/closing-and-melee.md`); they become wiki routes.
+* GitHub Flavored Markdown is supported (tables, strikethrough, task lists). Raw HTML is not rendered.
+
+== Development
+
+Requirements: Node 24 (`.nvmrc`), pnpm 10 (`corepack enable`) and the `rmu-react-shared-lib` checkout next to this one.
+
+[source,bash]
+----
+make link-shared-lib   # build the shared lib and install the link: dependency
+cp .env.example .env
+make start             # dev server on http://localhost:8085
+pnpm test              # unit tests (Vitest)
+pnpm exec eslint src
+make check-translations
+----
+
+The wiki follows the language of the shell; `?lang=es` shows a given version of a page. Inside the shell, open http://localhost/wiki through the rmu-platform gateway. `make mfe-dev s=wiki` in rmu-platform stops the container so that the gateway uses this dev server.
+
+`make docker-build` builds `labcabrera/rmu-mfe-wiki:local` (nginx with the static bundle); `make help` lists the other targets.
