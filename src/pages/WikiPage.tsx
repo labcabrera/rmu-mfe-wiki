@@ -1,12 +1,12 @@
-import { FC, useEffect, useMemo } from 'react';
+import { FC, useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { Alert, Box, Link, Stack, Typography } from '@mui/material';
-import { NotFound, RmuBreadcrumbs } from '@labcabrera-rmu/rmu-react-shared-lib';
+import { extractHeadings, MarkdownContent, NotFound, RmuBreadcrumbs } from '@labcabrera-rmu/rmu-react-shared-lib';
 import { findPage, REFERENCE_LANGUAGE, translationStatus } from '../content/build-catalog';
 import { WIKI_CATALOG } from '../content/catalog';
-import MarkdownView from '../markdown/MarkdownView';
-import { extractHeadings, pickLanguage, WIKI_BASE } from '../markdown/links';
+import { IMAGE_URLS } from '../markdown/images';
+import { pickLanguage, resolveImage, resolveLink, WIKI_BASE } from '../markdown/links';
 
 /**
  * One page of the wiki (workspace spec 099): its Markdown in the active language, or in Spanish with a notice, and
@@ -25,6 +25,10 @@ const WikiPage: FC = () => {
     : REFERENCE_LANGUAGE;
   const version = page?.versions[language];
   const headings = useMemo(() => (version ? extractHeadings(version.markdown) : []), [version]);
+  const section = page?.section ?? '';
+  // Relative links to other pages become wiki routes, and images the bundled files, in the page language if there.
+  const linkOf = useCallback((href: string) => resolveLink(href, section), [section]);
+  const imageOf = useCallback((src: string) => resolveImage(src, IMAGE_URLS, language), [language]);
 
   // A link with an anchor (#part) scrolls to it once the page is there.
   useEffect(() => {
@@ -59,7 +63,7 @@ const WikiPage: FC = () => {
               </Link>
             </Alert>
           )}
-          <MarkdownView markdown={version.markdown} section={page.section} language={language} />
+          <MarkdownContent markdown={version.markdown} resolveLink={linkOf} resolveImage={imageOf} fullWidthImages />
         </Box>
         {headings.length > 1 && (
           <Box
